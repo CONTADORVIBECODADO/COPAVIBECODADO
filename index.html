@@ -3,52 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contador (Vibecodado) do Início da Copa</title>
-<meta name="description" content="Contagem regressiva para a Copa 2026 e jogos do Brasil">
+<title>Contador da Copa 2026 · Caminho do Brasil</title>
+<meta name="description" content="Contagem regressiva em tempo real para a abertura da Copa do Mundo 2026 e para os jogos do Brasil no Grupo C.">
+<meta name="theme-color" content="#08160f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg"></div>
+<div class="pitch" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
 
-<header>
-  <h1>⚽ Contador (Vibecodado) do Início da Copa</h1>
-  <p>Copa do Mundo 2026 • Atualização em tempo real</p>
+<header class="site-head reveal">
+  <span class="kicker">FIFA World Cup · 11 jun — 19 jul 2026</span>
+  <h1>Contagem<br>Regressiva</h1>
+  <p class="tagline">EUA · Canadá · México — atualização em tempo real, horário de Brasília</p>
 </header>
 
 <main>
-<section class="hero">
-  <h2>Jogo de Abertura</h2>
-  <p>México 🇲🇽 x 🇿🇦 África do Sul</p>
 
-  <div class="countdown">
-    <div class="box"><span id="days">0</span><small>Dias</small></div>
-    <div class="box"><span id="hours">0</span><small>Horas</small></div>
-    <div class="box"><span id="minutes">0</span><small>Minutos</small></div>
-    <div class="box"><span id="seconds">0</span><small>Segundos</small></div>
-  </div>
-</section>
+  <!-- JOGO DE ABERTURA -->
+  <section class="hero reveal" data-state="upcoming" id="opener">
+    <div class="hero-top">
+      <span class="tag">Jogo de abertura · Grupo A</span>
+      <span class="status" id="opener-status">Faltam</span>
+    </div>
 
-<section class="brazil">
-<h2>🇧🇷 Caminho do Brasil</h2>
+    <h2 class="fixture">
+      <span class="team">México <span class="flag">🇲🇽</span></span>
+      <span class="vs">×</span>
+      <span class="team"><span class="flag">🇿🇦</span> África do Sul</span>
+    </h2>
+    <p class="venue">Estádio Azteca · Cidade do México · qui, 11/06 · 16h00</p>
 
-<div class="match">
-<h3>🇧🇷 Brasil x 🇲🇦 Marrocos</h3>
-<p id="br1"></p>
-</div>
+    <div class="countdown" id="opener-clock">
+      <div class="unit"><span class="num" id="days">00</span><small>Dias</small></div>
+      <div class="sep">:</div>
+      <div class="unit"><span class="num" id="hours">00</span><small>Horas</small></div>
+      <div class="sep">:</div>
+      <div class="unit"><span class="num" id="minutes">00</span><small>Min</small></div>
+      <div class="sep">:</div>
+      <div class="unit"><span class="num" id="seconds">00</span><small>Seg</small></div>
+    </div>
+  </section>
 
-<div class="match">
-<h3>🇧🇷 Brasil x 🇭🇹 Haiti</h3>
-<p id="br2"></p>
-</div>
+  <!-- CAMINHO DO BRASIL -->
+  <section class="brazil reveal">
+    <div class="brazil-head">
+      <h2><span class="flag">🇧🇷</span> Caminho do Brasil</h2>
+      <span class="tag">Grupo C · fase de grupos</span>
+    </div>
 
-<div class="match">
-<h3>🏴 Escócia x 🇧🇷 Brasil</h3>
-<p id="br3"></p>
-</div>
-</section>
+    <div class="cards" id="brazil-cards">
+
+      <article class="match" data-state="upcoming" id="card-br1">
+        <div class="stub">
+          <span class="md">1ª<br>rodada</span>
+        </div>
+        <div class="body">
+          <span class="date">sáb · 13 jun</span>
+          <h3 class="teams">Brasil <span class="flag">🇧🇷</span> × <span class="flag">🇲🇦</span> Marrocos</h3>
+          <p class="info">MetLife Stadium · Nova York/NJ · 19h00</p>
+          <p class="clock" id="br1"><span class="dot"></span><span class="txt">—</span></p>
+        </div>
+      </article>
+
+      <article class="match" data-state="upcoming" id="card-br2">
+        <div class="stub">
+          <span class="md">2ª<br>rodada</span>
+        </div>
+        <div class="body">
+          <span class="date">sex · 19 jun</span>
+          <h3 class="teams">Brasil <span class="flag">🇧🇷</span> × <span class="flag">🇭🇹</span> Haiti</h3>
+          <p class="info">Lincoln Financial Field · Filadélfia · 21h30</p>
+          <p class="clock" id="br2"><span class="dot"></span><span class="txt">—</span></p>
+        </div>
+      </article>
+
+      <article class="match" data-state="upcoming" id="card-br3">
+        <div class="stub">
+          <span class="md">3ª<br>rodada</span>
+        </div>
+        <div class="body">
+          <span class="date">qua · 24 jun</span>
+          <h3 class="teams">Escócia <span class="flag">🏴</span> × <span class="flag">🇧🇷</span> Brasil</h3>
+          <p class="info">Hard Rock Stadium · Miami · 19h00</p>
+          <p class="clock" id="br3"><span class="dot"></span><span class="txt">—</span></p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">Avançando no grupo, a estreia no mata-mata é em <strong>29 de junho</strong> (provável adversário do Grupo F).</p>
+  </section>
+
 </main>
 
-<footer>V2 • Otimizado para celular</footer>
+<footer class="reveal">
+  <p>Final em 19 de julho · MetLife Stadium, Nova York/NJ</p>
+  <p class="small">Contador da Copa 2026 · V3 · dados do sorteio oficial da FIFA</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
